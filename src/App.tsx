@@ -7,10 +7,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white text-black font-sans">
-      {/* Navbar */}
-      <nav className="border-b border-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+      {/* Floating Navbar */}
+      <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-white/90 backdrop-blur-md border border-black/20 shadow-lg rounded-full">
+        <div className="px-6 sm:px-8 relative">
+          <div className="flex justify-between items-center h-14">
             {/* Left side - Features */}
             <div className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-black hover:text-gray-600 transition-colors font-medium">
@@ -54,19 +54,19 @@ function App() {
 
           {/* Mobile menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden border-t border-black">
-              <div className="px-2 pt-2 pb-3 space-y-1">
-                <a href="#features" className="block px-3 py-2 text-black hover:bg-gray-100 font-medium">
+            <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white/95 backdrop-blur-md border border-black/20 rounded-2xl shadow-lg">
+              <div className="px-4 py-3 space-y-2">
+                <a href="#features" className="block px-3 py-2 text-black hover:bg-gray-100 font-medium rounded-lg">
                   Features
                 </a>
-                <a href="#pricing" className="block px-3 py-2 text-black hover:bg-gray-100 font-medium">
+                <a href="#pricing" className="block px-3 py-2 text-black hover:bg-gray-100 font-medium rounded-lg">
                   Pricing
                 </a>
-                <a href="#dashboard" className="block px-3 py-2 text-black hover:bg-gray-100 font-medium">
+                <a href="#dashboard" className="block px-3 py-2 text-black hover:bg-gray-100 font-medium rounded-lg">
                   Dashboard
                 </a>
                 <div className="px-3 py-2">
-                  <Button className="w-full bg-black text-white hover:bg-gray-800 font-medium">
+                  <Button className="w-full bg-black text-white hover:bg-gray-800 font-medium rounded-lg">
                     Get Started
                   </Button>
                 </div>
@@ -77,7 +77,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <main className="m-10" style={{ height: 'calc(100dvh - 64px - 80px)' }}>
+      <main className="m-10 pt-16" style={{ height: 'calc(100dvh - 80px)' }}>
         <div className="h-full flex flex-col justify-center items-center text-center max-w-4xl mx-auto">
           <div className="space-y-8">
             <h1 className="text-5xl md:text-7xl font-bold text-black leading-tight">
